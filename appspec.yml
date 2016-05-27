@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /var/www/html/Kreo10
 hooks:
+BeforeInstall:
+    - location: Kreo10/scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
 AfterInstall:
     - location: Kreo10/scripts/change_permissions.sh
       timeout: 300
